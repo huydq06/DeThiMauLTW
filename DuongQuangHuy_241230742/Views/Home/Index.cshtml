@@ -1,0 +1,22 @@
+﻿@model IEnumerable<DuongQuangHuy_241230742.Models.Sach>
+
+<div class="banner"> <img src="~/images/banner.jpg" alt="Banner"/></div>
+<div id="main-content">
+    <div class="section-head">
+          <h3>Dương Quang Huy</h3>
+          <a asp-action="Create">Thêm sách mới &rsaquo;</a>
+    </div>
+    <div class="grid">
+        @foreach (var item in Model)
+        {
+            <div class="book-card">
+                <a href="#"><img src="~/images/@item.Anh" alt="@item.TenSach"/></a>
+                <h2>@item.TenSach</h2>
+                <div class="book-foot">
+                    <span class="price">@item.Gia</span>
+                    <button class="btn-buy">Thêm vào giỏ</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
